@@ -1,0 +1,431 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EFE12FF01BACFB9300B105C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE12FEF1BACFB9300B105C3 /* main.m */; };
+		EFE12FF31BACFB9300B105C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE12FF21BACFB9300B105C3 /* AppDelegate.m */; };
+		EFE12FF61BACFB9300B105C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE12FF51BACFB9300B105C3 /* ViewController.m */; };
+		EFE12FF91BACFB9300B105C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFE12FF71BACFB9300B105C3 /* Main.storyboard */; };
+		EFE12FFB1BACFB9300B105C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFE12FFA1BACFB9300B105C3 /* Images.xcassets */; };
+		EFE12FFE1BACFB9300B105C3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFE12FFC1BACFB9300B105C3 /* LaunchScreen.xib */; };
+		EFE1300A1BACFB9300B105C3 /* WFTableViewCellBorderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE130091BACFB9300B105C3 /* WFTableViewCellBorderTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EFE130041BACFB9300B105C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EFE12FE21BACFB9300B105C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFE12FE91BACFB9300B105C3;
+			remoteInfo = WFTableViewCellBorder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EFE12FEA1BACFB9300B105C3 /* WFTableViewCellBorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WFTableViewCellBorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFE12FEE1BACFB9300B105C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFE12FEF1BACFB9300B105C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EFE12FF11BACFB9300B105C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EFE12FF21BACFB9300B105C3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EFE12FF41BACFB9300B105C3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EFE12FF51BACFB9300B105C3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EFE12FF81BACFB9300B105C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EFE12FFA1BACFB9300B105C3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EFE12FFD1BACFB9300B105C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		EFE130031BACFB9300B105C3 /* WFTableViewCellBorderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WFTableViewCellBorderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFE130081BACFB9300B105C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFE130091BACFB9300B105C3 /* WFTableViewCellBorderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFTableViewCellBorderTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EFE12FE71BACFB9300B105C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFE130001BACFB9300B105C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EFE12FE11BACFB9300B105C3 = {
+			isa = PBXGroup;
+			children = (
+				EFE12FEC1BACFB9300B105C3 /* WFTableViewCellBorder */,
+				EFE130061BACFB9300B105C3 /* WFTableViewCellBorderTests */,
+				EFE12FEB1BACFB9300B105C3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EFE12FEB1BACFB9300B105C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EFE12FEA1BACFB9300B105C3 /* WFTableViewCellBorder.app */,
+				EFE130031BACFB9300B105C3 /* WFTableViewCellBorderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EFE12FEC1BACFB9300B105C3 /* WFTableViewCellBorder */ = {
+			isa = PBXGroup;
+			children = (
+				EFE12FF11BACFB9300B105C3 /* AppDelegate.h */,
+				EFE12FF21BACFB9300B105C3 /* AppDelegate.m */,
+				EFE12FF41BACFB9300B105C3 /* ViewController.h */,
+				EFE12FF51BACFB9300B105C3 /* ViewController.m */,
+				EFE12FF71BACFB9300B105C3 /* Main.storyboard */,
+				EFE12FFA1BACFB9300B105C3 /* Images.xcassets */,
+				EFE12FFC1BACFB9300B105C3 /* LaunchScreen.xib */,
+				EFE12FED1BACFB9300B105C3 /* Supporting Files */,
+			);
+			path = WFTableViewCellBorder;
+			sourceTree = "<group>";
+		};
+		EFE12FED1BACFB9300B105C3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EFE12FEE1BACFB9300B105C3 /* Info.plist */,
+				EFE12FEF1BACFB9300B105C3 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EFE130061BACFB9300B105C3 /* WFTableViewCellBorderTests */ = {
+			isa = PBXGroup;
+			children = (
+				EFE130091BACFB9300B105C3 /* WFTableViewCellBorderTests.m */,
+				EFE130071BACFB9300B105C3 /* Supporting Files */,
+			);
+			path = WFTableViewCellBorderTests;
+			sourceTree = "<group>";
+		};
+		EFE130071BACFB9300B105C3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EFE130081BACFB9300B105C3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EFE12FE91BACFB9300B105C3 /* WFTableViewCellBorder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFE1300D1BACFB9300B105C3 /* Build configuration list for PBXNativeTarget "WFTableViewCellBorder" */;
+			buildPhases = (
+				EFE12FE61BACFB9300B105C3 /* Sources */,
+				EFE12FE71BACFB9300B105C3 /* Frameworks */,
+				EFE12FE81BACFB9300B105C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WFTableViewCellBorder;
+			productName = WFTableViewCellBorder;
+			productReference = EFE12FEA1BACFB9300B105C3 /* WFTableViewCellBorder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EFE130021BACFB9300B105C3 /* WFTableViewCellBorderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFE130101BACFB9300B105C3 /* Build configuration list for PBXNativeTarget "WFTableViewCellBorderTests" */;
+			buildPhases = (
+				EFE12FFF1BACFB9300B105C3 /* Sources */,
+				EFE130001BACFB9300B105C3 /* Frameworks */,
+				EFE130011BACFB9300B105C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EFE130051BACFB9300B105C3 /* PBXTargetDependency */,
+			);
+			name = WFTableViewCellBorderTests;
+			productName = WFTableViewCellBorderTests;
+			productReference = EFE130031BACFB9300B105C3 /* WFTableViewCellBorderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EFE12FE21BACFB9300B105C3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = feiwu;
+				TargetAttributes = {
+					EFE12FE91BACFB9300B105C3 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					EFE130021BACFB9300B105C3 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = EFE12FE91BACFB9300B105C3;
+					};
+				};
+			};
+			buildConfigurationList = EFE12FE51BACFB9300B105C3 /* Build configuration list for PBXProject "WFTableViewCellBorder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EFE12FE11BACFB9300B105C3;
+			productRefGroup = EFE12FEB1BACFB9300B105C3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EFE12FE91BACFB9300B105C3 /* WFTableViewCellBorder */,
+				EFE130021BACFB9300B105C3 /* WFTableViewCellBorderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EFE12FE81BACFB9300B105C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFE12FF91BACFB9300B105C3 /* Main.storyboard in Resources */,
+				EFE12FFE1BACFB9300B105C3 /* LaunchScreen.xib in Resources */,
+				EFE12FFB1BACFB9300B105C3 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFE130011BACFB9300B105C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EFE12FE61BACFB9300B105C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFE12FF61BACFB9300B105C3 /* ViewController.m in Sources */,
+				EFE12FF31BACFB9300B105C3 /* AppDelegate.m in Sources */,
+				EFE12FF01BACFB9300B105C3 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFE12FFF1BACFB9300B105C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFE1300A1BACFB9300B105C3 /* WFTableViewCellBorderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EFE130051BACFB9300B105C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFE12FE91BACFB9300B105C3 /* WFTableViewCellBorder */;
+			targetProxy = EFE130041BACFB9300B105C3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EFE12FF71BACFB9300B105C3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EFE12FF81BACFB9300B105C3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EFE12FFC1BACFB9300B105C3 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EFE12FFD1BACFB9300B105C3 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EFE1300B1BACFB9300B105C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EFE1300C1BACFB9300B105C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EFE1300E1BACFB9300B105C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WFTableViewCellBorder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EFE1300F1BACFB9300B105C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WFTableViewCellBorder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EFE130111BACFB9300B105C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WFTableViewCellBorderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WFTableViewCellBorder.app/WFTableViewCellBorder";
+			};
+			name = Debug;
+		};
+		EFE130121BACFB9300B105C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WFTableViewCellBorderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WFTableViewCellBorder.app/WFTableViewCellBorder";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EFE12FE51BACFB9300B105C3 /* Build configuration list for PBXProject "WFTableViewCellBorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFE1300B1BACFB9300B105C3 /* Debug */,
+				EFE1300C1BACFB9300B105C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFE1300D1BACFB9300B105C3 /* Build configuration list for PBXNativeTarget "WFTableViewCellBorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFE1300E1BACFB9300B105C3 /* Debug */,
+				EFE1300F1BACFB9300B105C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EFE130101BACFB9300B105C3 /* Build configuration list for PBXNativeTarget "WFTableViewCellBorderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFE130111BACFB9300B105C3 /* Debug */,
+				EFE130121BACFB9300B105C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EFE12FE21BACFB9300B105C3 /* Project object */;
+}
