@@ -14,6 +14,7 @@
 		EFE12FFB1BACFB9300B105C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFE12FFA1BACFB9300B105C3 /* Images.xcassets */; };
 		EFE12FFE1BACFB9300B105C3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFE12FFC1BACFB9300B105C3 /* LaunchScreen.xib */; };
 		EFE1300A1BACFB9300B105C3 /* WFTableViewCellBorderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE130091BACFB9300B105C3 /* WFTableViewCellBorderTests.m */; };
+		EFE130161BACFC8000B105C3 /* UITableViewCell+WFBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE130151BACFC8000B105C3 /* UITableViewCell+WFBorder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		EFE130031BACFB9300B105C3 /* WFTableViewCellBorderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WFTableViewCellBorderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFE130081BACFB9300B105C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFE130091BACFB9300B105C3 /* WFTableViewCellBorderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFTableViewCellBorderTests.m; sourceTree = "<group>"; };
+		EFE130141BACFC8000B105C3 /* UITableViewCell+WFBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+WFBorder.h"; sourceTree = "<group>"; };
+		EFE130151BACFC8000B105C3 /* UITableViewCell+WFBorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+WFBorder.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,7 @@
 		EFE12FEC1BACFB9300B105C3 /* WFTableViewCellBorder */ = {
 			isa = PBXGroup;
 			children = (
+				EFE130131BACFC2900B105C3 /* WFTableViewCell+Extension */,
 				EFE12FF11BACFB9300B105C3 /* AppDelegate.h */,
 				EFE12FF21BACFB9300B105C3 /* AppDelegate.m */,
 				EFE12FF41BACFB9300B105C3 /* ViewController.h */,
@@ -117,6 +121,15 @@
 				EFE130081BACFB9300B105C3 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EFE130131BACFC2900B105C3 /* WFTableViewCell+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EFE130141BACFC8000B105C3 /* UITableViewCell+WFBorder.h */,
+				EFE130151BACFC8000B105C3 /* UITableViewCell+WFBorder.m */,
+			);
+			path = "WFTableViewCell+Extension";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFE130161BACFC8000B105C3 /* UITableViewCell+WFBorder.m in Sources */,
 				EFE12FF61BACFB9300B105C3 /* ViewController.m in Sources */,
 				EFE12FF31BACFB9300B105C3 /* AppDelegate.m in Sources */,
 				EFE12FF01BACFB9300B105C3 /* main.m in Sources */,
@@ -416,6 +430,7 @@
 				EFE1300F1BACFB9300B105C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EFE130101BACFB9300B105C3 /* Build configuration list for PBXNativeTarget "WFTableViewCellBorderTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +439,7 @@
 				EFE130121BACFB9300B105C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
