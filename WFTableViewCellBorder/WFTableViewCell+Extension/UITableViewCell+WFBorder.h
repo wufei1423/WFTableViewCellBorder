@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_OPTIONS(NSInteger, WFBorderOption) {
-    WFBorderOptionNone = 0, // none
-    WFBorderOptionTop = 1 << 0, // top
-    WFBorderOptionLeft = 1 << 1, // left
-    WFBorderOptionBottom = 1 << 2, // bottom
-    WFBorderOptionRight = 1 << 3, // right
+    WFBorderOptionNone = 1 << 0, // none
+    WFBorderOptionTop = 1 << 1, // top
+    WFBorderOptionLeft = 1 << 2, // left
+    WFBorderOptionBottom = 1 << 3, // bottom
+    WFBorderOptionRight = 1 << 4, // right
 };
 
 @interface UITableViewCell (WFBorder)

@@ -19,13 +19,86 @@ static NSString * const WFLeftBorderViewKey = @"WFLeftBorderViewKey";
 static NSString * const WFBottomBorderViewKey = @"WFBottomBorderViewKey";
 static NSString * const WFRightBorderViewKey = @"WFRightBorderViewKey";
 
+static NSString * const WFTopBorderViewHorizontalConstraintsKey = @"WFTopBorderViewHorizontalConstraintsKey";
+static NSString * const WFTopBorderViewVerticalConstraintsKey = @"WFTopBorderViewVerticalConstraintsKey";
+static NSString * const WFLeftBorderViewHorizontalConstraintsKey = @"WFLeftBorderViewHorizontalConstraintsKey";
+static NSString * const WFLeftBorderViewVerticalConstraintsKey = @"WFLeftBorderViewVerticalConstraintsKey";
+static NSString * const WFBottomBorderViewHorizontalConstraintsKey = @"WFBottomBorderViewHorizontalConstraintsKey";
+static NSString * const WFBottomBorderViewVerticalConstraintsKey = @"WFBottomBorderViewVerticalConstraintsKey";
+static NSString * const WFRightBorderViewHorizontalConstraintsKey = @"WFRightBorderViewHorizontalConstraintsKey";
+static NSString * const WFRightBorderViewVerticalConstraintsKey = @"WFRightBorderViewVerticalConstraintsKey";
+
 @implementation UITableViewCell (WFBorder)
 
 #pragma mark - layout method
 
 - (void)layoutBorderViews
 {
+    UIView *topBorderView = [self topBorderView];
+    UIView *leftBorderView = [self leftBorderView];
+    UIView *bottomBorderView = [self bottomBorderView];
+    UIView *rightBorderView = [self rightBorderView];
     
+    WFBorderOption borderOption = [self borderOption];
+    
+    if (borderOption & WFBorderOptionNone) {
+        topBorderView.hidden = YES;
+        leftBorderView.hidden = YES;
+        bottomBorderView.hidden = YES;
+        rightBorderView.hidden = YES;
+    }
+    
+    if (borderOption & WFBorderOptionTop) {
+        topBorderView.hidden = NO;
+        topBorderView.backgroundColor = [self borderColor];
+        [self.contentView removeConstraints:objc_getAssociatedObject(self, &WFTopBorderViewHorizontalConstraintsKey)];
+        [self.contentView removeConstraints:objc_getAssociatedObject(self, &WFTopBorderViewVerticalConstraintsKey)];
+        NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-margin-[topBorderView]-0-|" options:0 metrics:@{@"margin": @([self borderInsets].top)} views:@{@"topBorderView": topBorderView}];
+        objc_setAssociatedObject(self, &WFTopBorderViewHorizontalConstraintsKey, horizontalConstraints, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self.contentView addConstraints:horizontalConstraints];
+        NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[topBorderView(height)]" options:0 metrics:@{@"height": @([self borderWidths].top)} views:@{@"topBorderView": topBorderView}];
+        objc_setAssociatedObject(self, &WFTopBorderViewVerticalConstraintsKey, verticalConstraints, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self.contentView addConstraints:verticalConstraints];
+    }
+    
+    if (borderOption & WFBorderOptionLeft) {
+        leftBorderView.hidden = NO;
+        leftBorderView.backgroundColor = [self borderColor];
+        [self.contentView removeConstraints:objc_getAssociatedObject(self, &WFLeftBorderViewHorizontalConstraintsKey)];
+        [self.contentView removeConstraints:objc_getAssociatedObject(self, &WFLeftBorderViewVerticalConstraintsKey)];
+        NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[leftBorderView(width)]" options:0 metrics:@{@"width": @([self borderWidths].left)} views:@{@"leftBorderView": leftBorderView}];
+        objc_setAssociatedObject(self, &WFLeftBorderViewHorizontalConstraintsKey, horizontalConstraints, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self.contentView addConstraints:horizontalConstraints];
+        NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-margin-[leftBorderView]-0-|" options:0 metrics:@{@"margin": @([self borderInsets].left)} views:@{@"leftBorderView": leftBorderView}];
+        objc_setAssociatedObject(self, &WFLeftBorderViewVerticalConstraintsKey, verticalConstraints, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self.contentView addConstraints:verticalConstraints];
+    }
+    
+    if (borderOption & WFBorderOptionBottom) {
+        bottomBorderView.hidden = NO;
+        bottomBorderView.backgroundColor = [self borderColor];
+        [self.contentView removeConstraints:objc_getAssociatedObject(self, &WFBottomBorderViewHorizontalConstraintsKey)];
+        [self.contentView removeConstraints:objc_getAssociatedObject(self, &WFBottomBorderViewVerticalConstraintsKey)];
+        NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-margin-[bottomBorderView]-0-|" options:0 metrics:@{@"margin": @([self borderInsets].bottom)} views:@{@"bottomBorderView": bottomBorderView}];
+        objc_setAssociatedObject(self, &WFBottomBorderViewHorizontalConstraintsKey, horizontalConstraints, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self.contentView addConstraints:horizontalConstraints];
+        NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[bottomBorderView(height)]-0-|" options:0 metrics:@{@"height": @([self borderWidths].bottom)} views:@{@"bottomBorderView": bottomBorderView}];
+        objc_setAssociatedObject(self, &WFBottomBorderViewVerticalConstraintsKey, verticalConstraints, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self.contentView addConstraints:verticalConstraints];
+    }
+    
+    if (borderOption & WFBorderOptionRight) {
+        rightBorderView.hidden = NO;
+        rightBorderView.backgroundColor = [self borderColor];
+        [self.contentView removeConstraints:objc_getAssociatedObject(self, &WFRightBorderViewHorizontalConstraintsKey)];
+        [self.contentView removeConstraints:objc_getAssociatedObject(self, &WFRightBorderViewVerticalConstraintsKey)];
+        NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[rightBorderView(width)]-0-|" options:0 metrics:@{@"width": @([self borderWidths].right)} views:@{@"rightBorderView": rightBorderView}];
+        objc_setAssociatedObject(self, &WFRightBorderViewHorizontalConstraintsKey, horizontalConstraints, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self.contentView addConstraints:horizontalConstraints];
+        NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-margin-[rightBorderView]-0-|" options:0 metrics:@{@"margin": @([self borderInsets].right)} views:@{@"rightBorderView": rightBorderView}];
+        objc_setAssociatedObject(self, &WFRightBorderViewVerticalConstraintsKey, verticalConstraints, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self.contentView addConstraints:verticalConstraints];
+    }
 }
 
 #pragma mark - private setter & getter
