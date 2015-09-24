@@ -60,6 +60,9 @@ static NSString * const WFRightBorderViewVerticalConstraintsKey = @"WFRightBorde
         objc_setAssociatedObject(self, &WFTopBorderViewVerticalConstraintsKey, verticalConstraints, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         [self addConstraints:verticalConstraints];
     }
+    else {
+        topBorderView.hidden = YES;
+    }
     
     if (borderOption & WFBorderOptionLeft) {
         leftBorderView.hidden = NO;
@@ -72,6 +75,9 @@ static NSString * const WFRightBorderViewVerticalConstraintsKey = @"WFRightBorde
         NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-margin-[leftBorderView]-0-|" options:0 metrics:@{@"margin": @([self borderInsets].left)} views:@{@"leftBorderView": leftBorderView}];
         objc_setAssociatedObject(self, &WFLeftBorderViewVerticalConstraintsKey, verticalConstraints, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         [self addConstraints:verticalConstraints];
+    }
+    else {
+        leftBorderView.hidden = YES;
     }
     
     if (borderOption & WFBorderOptionBottom) {
@@ -86,6 +92,9 @@ static NSString * const WFRightBorderViewVerticalConstraintsKey = @"WFRightBorde
         objc_setAssociatedObject(self, &WFBottomBorderViewVerticalConstraintsKey, verticalConstraints, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         [self addConstraints:verticalConstraints];
     }
+    else {
+        bottomBorderView.hidden = YES;
+    }
     
     if (borderOption & WFBorderOptionRight) {
         rightBorderView.hidden = NO;
@@ -98,6 +107,9 @@ static NSString * const WFRightBorderViewVerticalConstraintsKey = @"WFRightBorde
         NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-margin-[rightBorderView]-0-|" options:0 metrics:@{@"margin": @([self borderInsets].right)} views:@{@"rightBorderView": rightBorderView}];
         objc_setAssociatedObject(self, &WFRightBorderViewVerticalConstraintsKey, verticalConstraints, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         [self addConstraints:verticalConstraints];
+    }
+    else {
+        rightBorderView.hidden = YES;
     }
 }
 
