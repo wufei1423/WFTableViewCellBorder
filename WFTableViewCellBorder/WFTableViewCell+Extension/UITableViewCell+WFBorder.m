@@ -13,6 +13,7 @@ static NSString * const WFBorderOptionKey = @"WFBorderOptionKey";
 static NSString * const WFBorderInsetsKey = @"WFBorderInsetsKey";
 static NSString * const WFBorderColorKey = @"WFBorderColorKey";
 static NSString * const WFBorderWidthsKey = @"WFBorderWidthsKey";
+static NSString * const WFBorderDashesKey = @"WFBorderDashesKey";
 
 static NSString * const WFTopBorderViewKey = @"WFTopBorderViewKey";
 static NSString * const WFLeftBorderViewKey = @"WFLeftBorderViewKey";
@@ -28,16 +29,56 @@ static NSString * const WFBottomBorderViewVerticalConstraintsKey = @"WFBottomBor
 static NSString * const WFRightBorderViewHorizontalConstraintsKey = @"WFRightBorderViewHorizontalConstraintsKey";
 static NSString * const WFRightBorderViewVerticalConstraintsKey = @"WFRightBorderViewVerticalConstraintsKey";
 
+@interface WFLineView : UIView
+
+@property (nonatomic, assign) BOOL isDashed;
+@property (nonatomic, strong) UIColor *dashColor;
+
+@end
+
+@implementation WFLineView
+
+- (void)drawRect:(CGRect)rect
+{
+    if (!self.isDashed) return;
+    
+    CGFloat x = rect.origin.x;
+    CGFloat y = rect.origin.y;
+    CGFloat w = rect.size.width;
+    CGFloat h = rect.size.height;
+    
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    // horizontal
+    if (h < w) {
+        [path moveToPoint:CGPointMake(x, y + h * 0.5)];
+        [path addLineToPoint:CGPointMake(x + w, y + h * 0.5)];
+        [path setLineWidth:h];
+    }
+    // vertical
+    else {
+        [path moveToPoint:CGPointMake(x + w * 0.5, y)];
+        [path addLineToPoint:CGPointMake(x + w * 0.5, y + h)];
+        [path setLineWidth:w];
+    }
+    CGFloat pattern[] = {ceil(path.lineWidth), ceil(path.lineWidth)};
+    [path setLineDash:pattern count:2 phase:0];
+    
+    [self.dashColor set];
+    [path stroke];
+}
+
+@end
+
 @implementation UITableViewCell (WFBorder)
 
 #pragma mark - layout method
 
 - (void)layoutBorderViews
 {
-    UIView *topBorderView = [self topBorderView];
-    UIView *leftBorderView = [self leftBorderView];
-    UIView *bottomBorderView = [self bottomBorderView];
-    UIView *rightBorderView = [self rightBorderView];
+    WFLineView *topBorderView = [self topBorderView];
+    WFLineView *leftBorderView = [self leftBorderView];
+    WFLineView *bottomBorderView = [self bottomBorderView];
+    WFLineView *rightBorderView = [self rightBorderView];
     
     WFBorderOption borderOption = [self borderOption];
     
@@ -51,6 +92,11 @@ static NSString * const WFRightBorderViewVerticalConstraintsKey = @"WFRightBorde
     if (borderOption & WFBorderOptionTop) {
         topBorderView.hidden = NO;
         topBorderView.backgroundColor = [self borderColor];
+        topBorderView.isDashed = [self borderDashes].top;
+        if (topBorderView.isDashed) {
+            topBorderView.backgroundColor = [UIColor clearColor];
+            topBorderView.dashColor = [self borderColor];
+        }
         [self removeConstraints:objc_getAssociatedObject(self, &WFTopBorderViewHorizontalConstraintsKey)];
         [self removeConstraints:objc_getAssociatedObject(self, &WFTopBorderViewVerticalConstraintsKey)];
         NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-margin-[topBorderView]-0-|" options:0 metrics:@{@"margin": @([self borderInsets].top)} views:@{@"topBorderView": topBorderView}];
@@ -67,6 +113,11 @@ static NSString * const WFRightBorderViewVerticalConstraintsKey = @"WFRightBorde
     if (borderOption & WFBorderOptionLeft) {
         leftBorderView.hidden = NO;
         leftBorderView.backgroundColor = [self borderColor];
+        leftBorderView.isDashed = [self borderDashes].left;
+        if (leftBorderView.isDashed) {
+            leftBorderView.backgroundColor = [UIColor clearColor];
+            leftBorderView.dashColor = [self borderColor];
+        }
         [self removeConstraints:objc_getAssociatedObject(self, &WFLeftBorderViewHorizontalConstraintsKey)];
         [self removeConstraints:objc_getAssociatedObject(self, &WFLeftBorderViewVerticalConstraintsKey)];
         NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[leftBorderView(width)]" options:0 metrics:@{@"width": @([self borderWidths].left)} views:@{@"leftBorderView": leftBorderView}];
@@ -83,6 +134,11 @@ static NSString * const WFRightBorderViewVerticalConstraintsKey = @"WFRightBorde
     if (borderOption & WFBorderOptionBottom) {
         bottomBorderView.hidden = NO;
         bottomBorderView.backgroundColor = [self borderColor];
+        bottomBorderView.isDashed = [self borderDashes].bottom;
+        if (bottomBorderView.isDashed) {
+            bottomBorderView.backgroundColor = [UIColor clearColor];
+            bottomBorderView.dashColor = [self borderColor];
+        }
         [self removeConstraints:objc_getAssociatedObject(self, &WFBottomBorderViewHorizontalConstraintsKey)];
         [self removeConstraints:objc_getAssociatedObject(self, &WFBottomBorderViewVerticalConstraintsKey)];
         NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-margin-[bottomBorderView]-0-|" options:0 metrics:@{@"margin": @([self borderInsets].bottom)} views:@{@"bottomBorderView": bottomBorderView}];
@@ -99,6 +155,11 @@ static NSString * const WFRightBorderViewVerticalConstraintsKey = @"WFRightBorde
     if (borderOption & WFBorderOptionRight) {
         rightBorderView.hidden = NO;
         rightBorderView.backgroundColor = [self borderColor];
+        rightBorderView.isDashed = [self borderDashes].right;
+        if (rightBorderView.isDashed) {
+            rightBorderView.backgroundColor = [UIColor clearColor];
+            rightBorderView.dashColor = [self borderColor];
+        }
         [self removeConstraints:objc_getAssociatedObject(self, &WFRightBorderViewHorizontalConstraintsKey)];
         [self removeConstraints:objc_getAssociatedObject(self, &WFRightBorderViewVerticalConstraintsKey)];
         NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[rightBorderView(width)]-0-|" options:0 metrics:@{@"width": @([self borderWidths].right)} views:@{@"rightBorderView": rightBorderView}];
@@ -115,11 +176,11 @@ static NSString * const WFRightBorderViewVerticalConstraintsKey = @"WFRightBorde
 
 #pragma mark - private setter & getter
 
-- (UIView *)topBorderView
+- (WFLineView *)topBorderView
 {
-    UIView *topView = objc_getAssociatedObject(self, &WFTopBorderViewKey);
+    WFLineView *topView = objc_getAssociatedObject(self, &WFTopBorderViewKey);
     if (!topView) {
-        topView = [[UIView alloc] init];
+        topView = [[WFLineView alloc] init];
         topView.translatesAutoresizingMaskIntoConstraints = NO;
         [self insertSubview:topView atIndex:100];
         objc_setAssociatedObject(self, &WFTopBorderViewKey, topView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -127,11 +188,11 @@ static NSString * const WFRightBorderViewVerticalConstraintsKey = @"WFRightBorde
     return topView;
 }
 
-- (UIView *)leftBorderView
+- (WFLineView *)leftBorderView
 {
-    UIView *leftView = objc_getAssociatedObject(self, &WFLeftBorderViewKey);
+    WFLineView *leftView = objc_getAssociatedObject(self, &WFLeftBorderViewKey);
     if (!leftView) {
-        leftView = [[UIView alloc] init];
+        leftView = [[WFLineView alloc] init];
         leftView.translatesAutoresizingMaskIntoConstraints = NO;
         [self insertSubview:leftView atIndex:101];
         objc_setAssociatedObject(self, &WFLeftBorderViewKey, leftView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -139,11 +200,11 @@ static NSString * const WFRightBorderViewVerticalConstraintsKey = @"WFRightBorde
     return leftView;
 }
 
-- (UIView *)bottomBorderView
+- (WFLineView *)bottomBorderView
 {
-    UIView *bottomView = objc_getAssociatedObject(self, &WFBottomBorderViewKey);
+    WFLineView *bottomView = objc_getAssociatedObject(self, &WFBottomBorderViewKey);
     if (!bottomView) {
-        bottomView = [[UIView alloc] init];
+        bottomView = [[WFLineView alloc] init];
         bottomView.translatesAutoresizingMaskIntoConstraints = NO;
         [self insertSubview:bottomView atIndex:102];
         objc_setAssociatedObject(self, &WFBottomBorderViewKey, bottomView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -151,11 +212,11 @@ static NSString * const WFRightBorderViewVerticalConstraintsKey = @"WFRightBorde
     return bottomView;
 }
 
-- (UIView *)rightBorderView
+- (WFLineView *)rightBorderView
 {
-    UIView *rightView = objc_getAssociatedObject(self, &WFRightBorderViewKey);
+    WFLineView *rightView = objc_getAssociatedObject(self, &WFRightBorderViewKey);
     if (!rightView) {
-        rightView = [[UIView alloc] init];
+        rightView = [[WFLineView alloc] init];
         rightView.translatesAutoresizingMaskIntoConstraints = NO;
         [self insertSubview:rightView atIndex:103];
         objc_setAssociatedObject(self, &WFRightBorderViewKey, rightView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -240,6 +301,26 @@ static NSString * const WFRightBorderViewVerticalConstraintsKey = @"WFRightBorde
     }
     else {
         return UIEdgeInsetsMake(0.5, 0.5, 0.5, 0.5);
+    }
+}
+
+#pragma mark - public border dash setter & getter
+
+- (void)setBorderDashes:(UIEdgeInsets)borderDashes
+{
+    objc_setAssociatedObject(self, &WFBorderDashesKey, [NSValue valueWithUIEdgeInsets:borderDashes], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    [self layoutBorderViews];
+}
+
+- (UIEdgeInsets)borderDashes
+{
+    NSValue *borderDashes = objc_getAssociatedObject(self, &WFBorderDashesKey);
+    if (borderDashes) {
+        return [borderDashes UIEdgeInsetsValue];
+    }
+    else {
+        return UIEdgeInsetsMake(0, 0, 0, 0);
     }
 }
 

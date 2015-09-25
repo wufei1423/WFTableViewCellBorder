@@ -26,4 +26,6 @@ typedef NS_OPTIONS(NSInteger, WFBorderOption) {
 
 @property (nonatomic, assign) UIEdgeInsets borderWidths;
 
+@property (nonatomic, assign) UIEdgeInsets borderDashes;
+
 @end

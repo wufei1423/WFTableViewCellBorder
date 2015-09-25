@@ -41,8 +41,9 @@
     cell.contentView.backgroundColor = [UIColor lightGrayColor];
     
     cell.borderOption = WFBorderOptionTop | WFBorderOptionBottom;
-    cell.borderWidths = UIEdgeInsetsMake(5, 0, 5, 0);
+    cell.borderWidths = UIEdgeInsetsMake(2, 0, 4, 0);
     cell.borderInsets = UIEdgeInsetsMake(0, 15, 30, 0);
+    cell.borderDashes = UIEdgeInsetsMake(1, 0, 0, 0);
     if (indexPath.row % 2 == 0) {
         cell.borderColor = [UIColor redColor];
     }
