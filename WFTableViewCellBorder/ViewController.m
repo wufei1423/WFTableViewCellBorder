@@ -40,9 +40,9 @@
     cell.textLabel.text = @"今天上海的天气不错";
     cell.contentView.backgroundColor = [UIColor lightGrayColor];
     
-    cell.borderOption = WFBorderOptionTop | WFBorderOptionBottom;
-    cell.borderWidths = UIEdgeInsetsMake(2, 0, 4, 0);
-    cell.borderInsets = UIEdgeInsetsMake(0, 15, 30, 0);
+    cell.borderOption = WFBorderOptionTop | WFBorderOptionLeft | WFBorderOptionBottom | WFBorderOptionRight;
+    cell.borderWidths = UIEdgeInsetsMake(2, 4, 2, 4);
+    cell.borderInsets = UIEdgeInsetsMake(15, 0, 30, 0);
     cell.borderDashes = UIEdgeInsetsMake(1, 0, 0, 0);
     if (indexPath.row % 2 == 0) {
         cell.borderColor = [UIColor redColor];
