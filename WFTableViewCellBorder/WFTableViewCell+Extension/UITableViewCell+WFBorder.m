@@ -170,7 +170,7 @@ static NSString * const WFRightBorderViewKey = @"WFRightBorderViewKey";
     }
     topView = [[WFLineView alloc] init];
     topView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self insertSubview:topView atIndex:100];
+    [self insertSubview:topView atIndex:1000];
     objc_setAssociatedObject(self, &WFTopBorderViewKey, topView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     return topView;
 }
@@ -192,7 +192,7 @@ static NSString * const WFRightBorderViewKey = @"WFRightBorderViewKey";
     }
     leftView = [[WFLineView alloc] init];
     leftView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self insertSubview:leftView atIndex:101];
+    [self insertSubview:leftView atIndex:1001];
     objc_setAssociatedObject(self, &WFLeftBorderViewKey, leftView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     return leftView;
 }
@@ -214,7 +214,7 @@ static NSString * const WFRightBorderViewKey = @"WFRightBorderViewKey";
     }
     bottomView = [[WFLineView alloc] init];
     bottomView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self insertSubview:bottomView atIndex:102];
+    [self insertSubview:bottomView atIndex:1002];
     objc_setAssociatedObject(self, &WFBottomBorderViewKey, bottomView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     return bottomView;
 }
@@ -236,7 +236,7 @@ static NSString * const WFRightBorderViewKey = @"WFRightBorderViewKey";
     }
     rightView = [[WFLineView alloc] init];
     rightView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self insertSubview:rightView atIndex:103];
+    [self insertSubview:rightView atIndex:1003];
     objc_setAssociatedObject(self, &WFRightBorderViewKey, rightView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     return rightView;
 }
